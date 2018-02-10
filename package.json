@@ -8,16 +8,9 @@
     "email": "",
     "url": "https://samtulip.github.io"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": [
-    "yeoman",
-    "generator",
-    "java",
-    "yeoman-generator"
-  ],
+  "keywords": ["yeoman", "generator", "java", "yeoman-generator"],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
@@ -46,37 +39,20 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "git add",
-      "prettier --write"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["git add", "prettier --write"]
   },
   "eslintConfig": {
     "env": {
       "jest": true,
       "node": true
     },
-    "extends": [
-      "prettier",
-      "xo"
-    ],
-    "plugins": [
-      "prettier"
-    ],
+    "extends": ["prettier", "xo"],
+    "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
+      "indent":["error", 2]
     }
   },
-  "repository": "samtulip/generator-slingshot",
+  "repository": "git+git@github.com:samtulip/slingshot.git",
   "license": "Apache-2.0"
 }
