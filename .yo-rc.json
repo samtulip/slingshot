@@ -1,9 +1,0 @@
-{
-  "generator-node": {
-    "promptValues": {
-      "authorName": "Sam Tulip",
-      "authorEmail": "sam.tulip+slingshot@gmail.com",
-      "authorUrl": "https://samtulip.github.io"
-    }
-  }
-}
