@@ -50,7 +50,7 @@
     "extends": ["prettier", "xo"],
     "plugins": ["prettier"],
     "rules": {
-      "indent":["error", 2]
+      "indent": ["error", 2]
     }
   },
   "repository": "git+git@github.com:samtulip/slingshot.git",
