@@ -23,5 +23,5 @@ Full documentation and contributing guide can be found [here](https://samtulip.g
 Apache-2.0 © [Sam Tulip](https://samtulip.github.io)
 
 
-[travis-image]: https://travis-ci.org/samtulip/generator-slingshot.svg?branch=master
-[travis-url]: https://travis-ci.org/samtulip/generator-slingshot
+[travis-image]: https://api.travis-ci.org/samtulip/slingshot.svg?branch=master
+[travis-url]: https://travis-ci.org/samtulip/slingshot
