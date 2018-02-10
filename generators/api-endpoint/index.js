@@ -3,12 +3,13 @@ const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   writing() {
-    const javaSrcPath = this.config.get('base.groupId').replace('.', '/');
+    const javaSrcPath = this.options.package.split('.').join('/');
     this.fs.copyTpl(
       this.templatePath('ControllerTemplate.java'),
-      this.destinationPath(this.config.get('base.artifactId') + '-api/src/main/java/' + javaSrcPath + '/api/WelcomeController.java'),
+      this.destinationPath(this.options.module + '/src/main/java/' + javaSrcPath + '/' + this.options.className + '.java'),
       {
-        groupId: this.config.get('base.groupId'),
+        package: this.options.package,
+        path: this.options.path,
         message: this.options.message
       }
     );

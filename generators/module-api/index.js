@@ -25,7 +25,11 @@ module.exports = class extends Generator {
 
   configuring() {
     this.composeWith(require.resolve('../api-endpoint'), {
-      message: 'Welcome to my api!'
+      package: this.config.get('base.groupId') + '.api',
+      className: 'WelcomeController',
+      path: '/',
+      message: 'Welcome to my api!',
+      module: this.config.get('base.artifactId') + '-api'
     });
   }
 
