@@ -6,11 +6,7 @@ const yosay = require('yosay');
 module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
-    this.log(
-      yosay(
-        'Ready to get to work?'
-      )
-    );
+    this.log(yosay('Ready to get to work?'));
 
     const prompts = [
       {
