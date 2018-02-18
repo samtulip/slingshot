@@ -56,7 +56,7 @@
                                 </wait>
                                 <log>
                                     <color>green</color>
-                                    <prefix>application::&gt;</prefix>
+                                    <prefix>application&gt;</prefix>
                                 </log>
                                 <ports>
                                     <port>8080:8080</port>
