@@ -46,6 +46,19 @@ module.exports = class extends Generator {
       }
     );
 
+    this.fs.copyTpl(
+      this.templatePath('TestRunnerTemplate.java'),
+      this.destinationPath(this.config.get('base.artifactId') + '-at/src/test/java/' + javaSrcPath + '/CucumberIT.java'),
+      {
+        package: this.config.get('base.groupId')
+      }
+    );
+
+    this.fs.copy(
+      this.templatePath('TestRunnerTemplate.java'),
+      this.destinationPath(this.config.get('base.artifactId') + '-at/src/test/resources/features/instruction')
+    );
+
     this.config.set('at.config.class', this.config.get('base.groupId') + '.Config.Class');
 
     const $ = cheerio.load(this.fs.read(this.destinationPath('pom.xml')), {
