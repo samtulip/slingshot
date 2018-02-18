@@ -18,6 +18,7 @@
         <maven.compiler.target><%= javaVersion %></maven.compiler.target>
         <docker-image-name><%= dockerImageName %></docker-image-name>
         <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
+        <spring.version>4.3.6.RELEASE</spring.version>
     </properties>
 
     <build>

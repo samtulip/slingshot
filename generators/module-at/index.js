@@ -36,6 +36,17 @@ module.exports = class extends Generator {
         groupId: this.config.get('base.groupId')
       }
     );
+    const javaSrcPath = this.config.get('base.groupId').split('.').join('/');
+    this.fs.copyTpl(
+      this.templatePath('configTemplate.java'),
+      this.destinationPath(this.config.get('base.artifactId') + '-at/src/main/java/' + javaSrcPath + '/Config.java'),
+      {
+        package: this.config.get('base.groupId'),
+        componentScan: this.config.get('base.groupId')
+      }
+    );
+
+    this.config.set('at.config.class', this.config.get('base.groupId') + '.Config.Class');
 
     const $ = cheerio.load(this.fs.read(this.destinationPath('pom.xml')), {
       xmlMode: true
