@@ -32,9 +32,15 @@ module.exports = class extends Generator {
   }
 
   configuring() {
+    var javaVersion = this.props.javaVersion;
+    if (javaVersion > 2) {
+      javaVersion = '1.' + javaVersion;
+    }
+
     this.config.set('base.groupId', this.props.groupId);
     this.config.set('base.artifactId', this.props.artifactId);
-    this.config.set('base.javaVersion', this.props.javaVersion);
+    this.config.set('base.dockerImageName', this.props.artifactId.toLowerCase());
+    this.config.set('base.javaVersion', javaVersion);
   }
 
   writing() {
@@ -43,6 +49,7 @@ module.exports = class extends Generator {
       this.destinationPath('pom.xml'),
       {
         artifactId: this.config.get('base.artifactId'),
+        dockerImageName: this.config.get('base.dockerImageName'),
         groupId: this.config.get('base.groupId'),
         javaVersion: this.config.get('base.javaVersion')
       }
