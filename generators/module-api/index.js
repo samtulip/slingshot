@@ -13,7 +13,7 @@ module.exports = class extends Generator {
     const moduleName = this.config.get('base.artifactId') + '-application';
     $('modules').children().each(function (index, element) {
       if ($(element).text() === moduleName) {
-        that.env.error('Module previously generated. Aborting.');
+        that.env.error('API Module previously generated. Aborting.');
       }
     });
   }
@@ -24,6 +24,7 @@ module.exports = class extends Generator {
   }
 
   configuring() {
+    this.composeWith(require.resolve('../module-at'));
     this.composeWith(require.resolve('../api-endpoint'), {
       package: this.config.get('base.groupId') + '.api',
       className: 'WelcomeController',
