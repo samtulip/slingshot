@@ -22,8 +22,8 @@ describe('generator-slingshot:app', () => {
     const $ = cheerio.load(fs.readFileSync('pom.xml'), {
       xmlMode: true
     });
-    assert.equal($('groupId').text(), properties.groupId, 'Group ID not successfully inserted');
-    assert.equal($('artifactId').text(), properties.artifactId + '-parent', 'Artifact ID ID not successfully inserted');
+    assert.equal($('project > groupId').text(), properties.groupId, 'Group ID not successfully inserted');
+    assert.equal($('project > artifactId').text(), properties.artifactId + '-parent', 'Artifact ID ID not successfully inserted');
     $('properties').children().each(function (index, element) {
       if (index === 0 || index === 1) {
         assert.equal($(element).text(), properties.javaVersion, 'Java Version not successfully inserted on ' + element.name);

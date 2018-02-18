@@ -17,6 +17,24 @@
         <maven.compiler.source><%= javaVersion %></maven.compiler.source>
         <maven.compiler.target><%= javaVersion %></maven.compiler.target>
         <docker-image-name><%= dockerImageName %></docker-image-name>
+        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
     </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>fabric8-maven-plugin</artifactId>
+                    <version>3.5.33</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
