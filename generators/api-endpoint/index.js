@@ -13,5 +13,14 @@ module.exports = class extends Generator {
         message: this.options.message
       }
     );
+    this.fs.copyTpl(
+      this.templatePath('ControllerITTemplate.java'),
+      this.destinationPath(this.options.testModule + '/src/test/java/' + javaSrcPath + '/' + this.options.className + 'IT.java'),
+      {
+        package: this.options.package,
+        path: this.options.path,
+        message: this.options.message
+      }
+    );
   }
 };

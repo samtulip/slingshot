@@ -30,7 +30,8 @@ module.exports = class extends Generator {
       className: 'WelcomeController',
       path: '/',
       message: 'Welcome to my api!',
-      module: this.config.get('base.artifactId') + '-application'
+      module: this.config.get('base.artifactId') + '-application',
+      testModule: this.config.get('base.artifactId') + '-at'
     });
   }
 
