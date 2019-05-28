@@ -1,3 +1,7 @@
+# No longer in active development.
+
+Producing and maintaining a project scaffold system is a huge task. Its good to have an understanding of how these tools work but given some amazing open source alternatives  like https://www.jhipster.tech/ (java, spring, react|anglar) and https://github.com/facebook/create-react-app (react), and some of the generators provided as part of yeoman I would recommend using them for the bootstrapping and scaffolding of applications.
+
 # generator-slingshot [![Build Status][travis-image]][travis-url]
 > Generates java repositories to propel you project to success
 
